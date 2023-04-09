@@ -2,6 +2,8 @@ syntax = "proto2";
 
 package proto;
 
+option go_package = "github.com/danilshik/osmimp/parser/pbf/internal/model/";
+
 message Blob {
   optional bytes raw = 1; // No compression
   optional int32 raw_size = 2; // Only set when compressed, to the uncompressed size

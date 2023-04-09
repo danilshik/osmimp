@@ -2,6 +2,8 @@ syntax = "proto2";
 
 package proto;
 
+option go_package = "github.com/danilshik/osmimp/parser/pbf/internal/model/";
+
 message BlobHeader {
   required string type = 1;
   optional bytes indexdata = 2;

@@ -2,6 +2,8 @@ syntax = "proto2";
 
 package proto;
 
+option go_package = "github.com/danilshik/osmimp/parser/pbf/internal/model/";
+
 message DenseInfo {
   repeated int32 version = 1 [packed = true];
   repeated sint64 timestamp = 2 [packed = true];

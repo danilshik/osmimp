@@ -3,6 +3,8 @@ import "HeaderBBox.proto";
 
 package proto;
 
+option go_package = "github.com/danilshik/osmimp/parser/pbf/internal/model/";
+
 message HeaderBlock {
   optional HeaderBBox bbox = 1;
   /* Additional tags to aid in parsing this dataset */
