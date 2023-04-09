@@ -1,0 +1,4 @@
+project:
+  name: Osmimp
+  debug: true
+  environment: development

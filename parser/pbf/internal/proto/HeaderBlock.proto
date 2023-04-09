@@ -1,0 +1,14 @@
+syntax = "proto2";
+import "HeaderBBox.proto";
+
+package proto;
+
+message HeaderBlock {
+  optional HeaderBBox bbox = 1;
+  /* Additional tags to aid in parsing this dataset */
+  repeated string required_features = 4;
+  repeated string optional_features = 5;
+
+  optional string writingprogram = 16;
+  optional string source = 17; // From the bbox field.
+}

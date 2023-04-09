@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package proto;
+
+import "Info.proto";
+import "DenseInfo.proto";
+
+message DenseNodes {
+  repeated sint64 id = 1 [packed = true]; // DELTA coded
+
+  repeated Info info = 4;
+  optional DenseInfo denseinfo = 5;
+
+  repeated sint64 lat = 8 [packed = true]; // DELTA coded
+  repeated sint64 lon = 9 [packed = true]; // DELTA coded
+
+  // Special packing of keys and vals into one array. May be empty if all nodes in this block are tagless.
+  repeated int32 keys_vals = 10 [packed = true];
+}

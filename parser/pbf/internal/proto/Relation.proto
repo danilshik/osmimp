@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package proto;
+
+import "Info.proto";
+
+message Relation {
+  enum MemberType {
+    NODE = 0;
+    WAY = 1;
+    RELATION = 2;
+  }
+  required int64 id = 1;
+
+  // Parallel arrays.
+  repeated uint32 keys = 2 [packed = true];
+  repeated uint32 vals = 3 [packed = true];
+
+  optional Info info = 4;
+
+  // Parallel arrays
+  repeated int32 roles_sid = 8 [packed = true];
+  repeated sint64 memids = 9 [packed = true]; // DELTA encoded
+  repeated MemberType types = 10 [packed = true];
+}

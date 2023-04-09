@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package proto;
+
+import "Info.proto";
+
+message Way {
+  required int64 id = 1;
+  // Parallel arrays.
+  repeated uint32 keys = 2 [packed = true];
+  repeated uint32 vals = 3 [packed = true];
+
+  optional Info info = 4;
+
+  repeated sint64 refs = 8 [packed = true];  // DELTA coded
+}

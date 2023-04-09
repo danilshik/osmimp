@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package proto;
+
+message HeaderBBox {
+  required sint64 left = 1;
+  required sint64 right = 2;
+  required sint64 top = 3;
+  required sint64 bottom = 4;
+}

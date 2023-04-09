@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package proto;
+
+import "Node.proto";
+import "DenseNodes.proto";
+import "Way.proto";
+import "Relation.proto";
+import "ChangeSet.proto";
+
+message PrimitiveGroup {
+  repeated Node     nodes = 1;
+  optional DenseNodes dense = 2;
+  repeated Way      ways = 3;
+  repeated Relation relations = 4;
+  repeated ChangeSet changesets = 5;
+}
